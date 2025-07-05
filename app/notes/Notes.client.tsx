@@ -32,7 +32,7 @@ export default function NotesClient({ initialData }: NotesClientProps) {
     queryFn: () => fetchNotes(trimmedSearch, page),
     placeholderData: keepPreviousData,
     enabled: true,
-    initialData,
+    initialData: page === 1 && trimmedSearch === '' ? initialData : undefined,
     staleTime: 60 * 1000,
   });
 
